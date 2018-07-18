@@ -1,6 +1,7 @@
-var Letter = function (letter) {
+const Letter = function (letter) {
   this.character = letter;
   this.hasBeenGuessed = false;
+  
   this.guess = function (guessedCharacter) {
     if (this.hasBeenGuessed) return;
     this.hasBeenGuessed = this.character.toLowerCase() === guessedCharacter.toLowerCase();
