@@ -8,7 +8,7 @@ var Letter = function (letter) {
     return '_';
   };
   this.guess = function (guessedCharacter) {
-    this.hasBeenGuessed = this.character === guessedCharacter;
+    this.hasBeenGuessed = this.character.toLowerCase() === guessedCharacter.toLowerCase();
   };
 };
 
