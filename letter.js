@@ -11,7 +11,7 @@ Letter.prototype.toString = function() {
   console.log("testing testing 0,1,2");
   
   if (this.hasBeenGuessed) {
-    return this.character.toUpperCase();
+    return this.character;
   }
   return '_';
 }
