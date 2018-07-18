@@ -11,7 +11,7 @@ Letter.prototype.toString = function() {
   if (this.hasBeenGuessed) {
     return this.character;
   }
-  return '_';
+  return '■';
 }
 
 module.exports = Letter;
