@@ -8,9 +8,11 @@ const Word = function (word) {
   } //end for
 
   this.guess = function (character) {
+    let result = false;
     this.word.forEach (letter => {
-      letter.guess (character);
+      result = result || letter.guess (character);
     }); // end this.word.forEach (letter => {
+    return result;
   }; // end this.guess = function(character){
 }; //end constructor function
 

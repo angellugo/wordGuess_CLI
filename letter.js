@@ -5,6 +5,7 @@ const Letter = function (letter) {
   this.guess = function (guessedCharacter) {
     if (this.hasBeenGuessed) return;
     this.hasBeenGuessed = this.character.toLowerCase() === guessedCharacter.toLowerCase();
+    return this.hasBeenGuessed;
   };
 };
 
