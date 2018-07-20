@@ -22,7 +22,7 @@ stdin.on ('data', function (key) {
   if (key === ctrl_c || key === esc) {
     process.exit ();
   } else if (keyIsAlphabetic) {
-    console.log (key);
+    process.stdout.write (key); //use stdout so that the letter that follows shows in the same line
     play (key);
   } else {
     console.log ('Invalid key press'.bgRed);
@@ -33,19 +33,19 @@ stdin.on ('data', function (key) {
 function play (letter) {
   if (letterHasAlreadyBeenGuessed (letter)) {
     console.log (
-      colors.yellow ('You already guessed ' + letter + '. Try again...')
+      colors.yellow (' You already guessed ' + letter + '. Try again...')
     );
   } else if (word.guess (letter)) {
-    console.log ("You're right!".green);
+    console.log (" You're right!".green);
   } else {
-    console.log ('Wrong.Try again!'.red);
+    console.log (' Wrong.Try again!'.red);
     missedLetters.push (letter);
   }
 
-  console.log ('\nMissed letters: ' + missedLetters.join (',').yellow);
-  console.log ('\n' + word);
+  console.log ('Missed letters: ' + missedLetters.join (',').yellow);
 
   if (wordHasBeenGuessed ()) {
+    console.log ('\n' + word);
     console.log ('\nYou won!!!'.rainbow);
     process.exit ();
   } else if (missedLetters.length === word.length) {
@@ -59,6 +59,7 @@ function play (letter) {
       console.log ('You have ' + guessesRemaining + ' guesses remaining...');
     }
 
+    console.log ('\n' + word);
     process.stdout.write ('Guess a letter: '); //use stdout so that the letter that follows shows in the same line
   }
 }
