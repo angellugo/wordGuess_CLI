@@ -48,11 +48,11 @@ function play (letter) {
   if (wordHasBeenGuessed ()) {
     console.log ('\nYou won!!!'.rainbow);
     process.exit ();
-  } else if (missedLetters.length === word.word.length) {
+  } else if (missedLetters.length === word.length) {
     console.log ('You lost...'.blue);
     process.exit (1);
   } else {
-    const guessesRemaining = word.word.length - missedLetters.length;
+    const guessesRemaining = word.length - missedLetters.length;
     if (guessesRemaining === 1) {
       console.log ('You have 1 guess remaining...');
     } else {
