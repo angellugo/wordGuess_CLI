@@ -20,8 +20,10 @@ Word.prototype.toString = function () {
   return this.word.join (' ');
 };
 
-Object.defineProperty(Word.prototype, 'length', {get: function() {
-  return this.word.length;
-}});
+Object.defineProperty (Word.prototype, 'length', {
+  get: function () {
+    return this.word.length;
+  },
+});
 
 module.exports = Word;
