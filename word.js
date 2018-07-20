@@ -14,6 +14,13 @@ const Word = function (word) {
     }); // end this.word.forEach (letter => {
     return result;
   }; // end this.guess = function(character){
+
+  this.reveal = function () {
+    this.word.forEach(letter=>{
+      letter.hasBeenGuessed = true;
+    })
+    return this.word.join('');
+  }; //end this.reveal = function () {
 }; //end constructor function
 
 Word.prototype.toString = function () {

@@ -50,6 +50,7 @@ function play (letter) {
     process.exit ();
   } else if (missedLetters.length === word.length) {
     console.log ('You lost...'.blue);
+    console.log(colors.blue('The word was '+ word.reveal()));
     process.exit (1);
   } else {
     const guessesRemaining = word.length - missedLetters.length;
