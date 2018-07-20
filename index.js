@@ -1,5 +1,6 @@
 const Word = require ('./word.js');
 const colors = require ('colors');
+const inquirer = require ('inquirer');
 
 const stdin = process.stdin;
 const word = new Word ('Who');
