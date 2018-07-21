@@ -19,6 +19,7 @@
   "homepage": "https://github.com/angellugo/wordGuess_CLI#readme",
   "dependencies": {
     "colors": "^1.3.0",
-    "inquirer": "^6.0.0"
+    "inquirer": "^6.0.0",
+    "random-words": "^1.1.0"
   }
 }
