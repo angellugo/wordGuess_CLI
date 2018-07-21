@@ -10,7 +10,7 @@ const Word = function (word) {
   this.guess = function (character) {
     let result = false;
     this.word.forEach (letter => {
-      result = result || letter.guess (character);
+      result = letter.guess (character) || result;
     }); // end this.word.forEach (letter => {
     return result;
   }; // end this.guess = function(character){
